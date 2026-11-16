@@ -44,8 +44,8 @@
       <div class="story" id="cover">
         <div class="title-layer" aria-hidden="true"><div class="moving-title headline">${headline}</div></div>
         <section class="screen cover" aria-labelledby="cover-title">
-          <div class="cover-orbit" aria-hidden="true"><i></i><i></i></div>
-          <div class="flight-marks" aria-hidden="true"><i></i><i></i><i></i></div>
+          <div class="cover-map" aria-hidden="true"><i></i><i></i></div>
+          <div class="map-edition wrap" aria-hidden="true"><span>PIGEON <b>/</b> CLIMBING BASE</span><span>01 <b>/</b> 03</span></div>
           <h1 id="cover-title" class="headline cover-target">${headline}</h1>
           <a class="next-screen" href="#about">认识我 ${down}</a>
         </section>
@@ -79,10 +79,12 @@
   }
   function projectCard(project) {
     const url = liveUrl(project.url);
-    const illustration = project.art === "route" ? art.route() : project.art === "video" ? art.video() : categories[page].image();
+    const illustration = project.art === "route"
+      ? `<span class="plate-tag" aria-hidden="true">CRUX / JUG</span><img src="${prefix}assets/crux-jug.webp" width="820" height="546" alt="" decoding="async">`
+      : project.art === "video" ? `<span class="plate-tag" aria-hidden="true">BETA / MOTION</span>${art.video()}` : categories[page].image();
     const action = url ? `<a class="launch" href="${escape(url)}" aria-label="体验 ${escape(project.name)}">打开体验 ${external}</a>` :
       `<span class="project-status"><i></i>${escape(project.status || "尚未开放")}</span>`;
-    return `<article class="project"><div class="project-figure ${project.art === "video" ? "muted-figure" : ""}">${illustration}</div>
+    return `<article class="project"><div class="project-figure ${project.art === "route" ? "specimen-plate" : project.art === "video" ? "muted-figure" : ""}">${illustration}</div>
       <div class="project-info"><h2>${escape(project.name)}</h2><p>${escape(project.description)}</p>${action}</div></article>`;
   }
   function listing() {

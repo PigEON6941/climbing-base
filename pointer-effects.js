@@ -48,7 +48,7 @@
     ctx.lineCap="round";
     for (let i=1;i<trail.length;i++) {
       const a=trail[i-1], b=trail[i], fade=1-(now-a.time)/210;
-      ctx.strokeStyle=b.light ? "rgb(207,242,155)" : "rgb(92,148,77)";
+      ctx.strokeStyle=b.light ? "rgb(221,233,206)" : "rgb(165,185,154)";
       ctx.globalAlpha=.40*fade;
       ctx.lineWidth=.6+1.8*fade;
       ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();
@@ -64,7 +64,7 @@
       ctx.translate(p.x,p.y);
       ctx.rotate(p.rotation+p.life*.001);
       ctx.globalAlpha=fade*.85;
-      ctx.fillStyle=p.light ? "#d7f5a8" : (p.star ? "#658e44" : "#8aaf65");
+      ctx.fillStyle=p.light ? "#dbe7ce" : (p.star ? "#a3b599" : "#c0cbb1");
       ctx.beginPath();
       if (p.star) {
         ctx.moveTo(0,-r*1.65);ctx.quadraticCurveTo(r*.2,-r*.2,r*1.65,0);

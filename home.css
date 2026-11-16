@@ -1,9 +1,3 @@
-@font-face {
-  font-family: "Pigeon Display";
-  src: url("assets/pigeon-headline.ttf") format("truetype");
-  font-weight: 900;
-  font-display: swap;
-}
 @media(prefers-reduced-motion:no-preference) {
   html:has(body[data-page="home"]) { scroll-behavior:smooth; }
 }
@@ -22,7 +16,7 @@ body[data-page="home"] header {
 .screen:focus { outline: none; }
 .cover { display: grid; place-items: center; overflow: clip; }
 .headline {
-  font: 900 clamp(76px,8.6vw,154px)/1.19 "Pigeon Display","Songti SC",SimSun,serif;
+  font: 700 clamp(76px,8.35vw,145px)/1.16 var(--sans);
   letter-spacing: -.045em; color: var(--ink);
   width: max-content; max-width: 100%;
   white-space: nowrap;
@@ -30,19 +24,18 @@ body[data-page="home"] header {
 .headline span { display: block; }
 .headline span:last-child { color: var(--accent); }
 .cover-target { position: relative; z-index: 1; margin: 0 0 4vh; }
-.cover-orbit {
-  pointer-events: none; position: absolute; left: 50%; top: 46%;
-  width: min(82vw,1150px); height: min(44vw,385px);
-  transform: translate(-50%,-50%) rotate(-14deg);
-  border: 1px solid #859f7f80; border-radius: 50%;
-}
-.cover-orbit i { position:absolute; border-radius:50%; background:var(--accent); width:8px;height:8px; border:2px solid var(--paper); box-sizing:content-box; }
-.cover-orbit i:first-child { top:50%;left:-6px; }
-.cover-orbit i:last-child { bottom:14.3%;right:14%; width:9px;height:9px; background:#91b951; }
-.flight-marks { position: absolute; top:22%; right:17%; width:68px; height:38px; transform:rotate(-8deg); }
-.flight-marks i { position:absolute; width:20px; height:10px; background: #66895c; clip-path:polygon(0 0,51% 43%,100% 0,54% 92%,47% 96%); }
-.flight-marks i:nth-child(2) { left:24px;top:15px; transform:scale(.7) rotate(17deg); }
-.flight-marks i:nth-child(3) { left:46px;top:8px; transform:scale(.48) rotate(10deg); }
+/* A route traced between two engraved holds; the title sits in clear space. */
+.cover-map { position:absolute; inset:0; overflow:hidden; pointer-events:none;
+  background: url("assets/base-traverse.svg") center / 100% 100% no-repeat,
+    radial-gradient(ellipse at 85% 12%,#30362e88,transparent 48%); }
+.cover-map i { position:absolute; width:clamp(305px,42vw,720px); aspect-ratio:510/300;
+  background:url("assets/hold-contours.svg") center/contain no-repeat; }
+.cover-map i:first-child { right:-7%; top:1%; transform:rotate(4deg); opacity:.82; }
+.cover-map i:last-child { left:-10%; bottom:0; width:clamp(320px,45vw,760px); transform:rotate(163deg); opacity:.66; }
+.map-edition { pointer-events:none; position:absolute; top:clamp(23px,5vh,54px); left:50%; translate:-50% 0;
+  display:flex; justify-content:space-between; align-items:center; color:var(--muted); font:500 10px/1.3 var(--mono);letter-spacing:.14em; }
+.map-edition span:first-child::before { content:""; display:inline-block; width:23px; height:1px; background:var(--edge); vertical-align:middle; margin-right:10px; }
+.map-edition b { color:#81917c; padding:0 .4em; font-weight:inherit; }
 .title-layer {
   position: sticky; top: var(--nav-height); height: 0; width:100%; pointer-events: none; z-index: 2;
 }
@@ -51,33 +44,34 @@ body[data-page="home"] header {
 .story.is-ready .cover-target,.story.is-ready .about-target { opacity:0; }
 .about { display:grid; grid-template-columns:1fr 1.05fr; align-items:center; gap:clamp(32px,5vw,80px); padding-block:72px 98px; }
 .about-target { font-size:clamp(44px,4.8vw,78px); margin:0 0 clamp(22px,3.7vh,40px); }
-.bio-lines { display:grid; gap:6px; color:#435c49; font-size:clamp(14px,1.1vw,18px); line-height:1.6; }
-.next-screen { position:absolute; bottom:22px; left:50%; transform:translateX(-50%); color:var(--muted); display:inline-flex; align-items:center; justify-content:center; gap:10px; min-height:44px; padding-inline:14px; font-size:13px; }
+.bio-lines { display:grid; gap:6px; color:var(--muted); font-size:clamp(14px,1.1vw,18px); line-height:1.6; }
+.next-screen { border-bottom:1px solid var(--edge); position:absolute; bottom:22px; left:50%; transform:translateX(-50%); color:var(--muted); display:inline-flex; align-items:center; justify-content:center; gap:10px; min-height:44px; padding-inline:14px; font-size:13px; }
 .next-screen svg { width:19px; height:19px; }
 .next-screen:hover { color:var(--accent); }
 .bird-figure { display:grid; align-content:center; justify-items:center; min-width:0; }
 .bird-stage {
   position:relative; width:100%; height:clamp(270px,37vw,500px);
-  background:radial-gradient(ellipse at 50% 52%,#dce9d1 0%,#e6efdb70 48%,transparent 71%);
+  background:radial-gradient(ellipse at 50% 52%,#77816c31 0%,#56604c24 44%,transparent 70%);
 }
-.bird-stage::before { content:""; position:absolute; top:var(--perch,82%); left:52%; transform:translate(-50%,-50%); width:var(--shadow-width,53%); aspect-ratio:9; border-radius:50%; background:radial-gradient(ellipse,#455a3840,transparent 70%); }
+.bird-stage::before { content:""; position:absolute; top:var(--perch,82%); left:52%; transform:translate(-50%,-50%); width:var(--shadow-width,53%); aspect-ratio:9; border-radius:50%; background:radial-gradient(ellipse,#080c09b3,transparent 70%); }
 #pigeon-model { display:block; position:relative; width:100%; height:100%; touch-action:pan-y pinch-zoom; cursor:grab; }
 #pigeon-model:focus-visible { outline:3px solid var(--accent); outline-offset:2px; }
 #pigeon-model:active { cursor:grabbing; }
 .bird-fallback { display:none; width:45%; position:absolute;top:25%;left:28%; }
 .bird-stage.failed .bird-fallback { display:block; }
 .bird-stage.failed canvas { visibility:hidden; }
-.catalog { display:flex; align-items:center; background:#edf3e5; border-top:1px solid var(--rule); }
+.catalog { display:flex; align-items:center; background:var(--mat); border-top:1px solid var(--rule); }
 .catalog-inner { padding-block:clamp(45px,9vh,100px); }
 .catalog .section-head { margin-bottom:clamp(25px,5vh,48px); }
-.catalog .section-head > svg { align-self:center; width:clamp(26px,3vw,44px); height:auto; margin-right:5px; }
-.catalog h2 { font:900 clamp(38px,5vw,78px)/1.15 "Songti SC",SimSun,serif; }
+.catalog .section-head > svg { align-self:center; width:clamp(23px,2.4vw,34px); height:auto; margin-right:5px; }
+.catalog h2 { font:700 clamp(38px,4.5vw,70px)/1.15 var(--sans); letter-spacing:-.055em; }
 .catalog .entrance { min-height:clamp(215px,30vh,300px); }
 .catalog .entrance h3 { margin-top:12px; }
 @media(max-width:760px) {
-  .headline { font-size:clamp(36px,10.8vw,80px); }
-  .cover-orbit { width:88vw; height:47vw; }
-  .flight-marks { top:29%; right:11%; }
+  .headline { font-size:clamp(32px,10.4vw,80px); }
+  .cover-map i:first-child { top:11%; right:-24%; }
+  .cover-map i:last-child { left:-28%; bottom:10%; }
+  .map-edition { font-size:9px; }
   .about { gap:18px; grid-template-columns:1.1fr 1fr; }
   .about-target { font-size:clamp(30px,4.9vw,43px); }
 }
@@ -87,7 +81,6 @@ body[data-page="home"] header {
   .about-target { font-size:clamp(31px,7.8vw,44px); margin-bottom:13px; }
   .bird-stage { height:clamp(126px,25svh,220px); width:min(100%,340px); }
   .next-screen { bottom:9px; }
-  .flight-marks { top:30%; }
   .catalog .entrance { min-height:clamp(132px,21svh,190px); padding:18px; }
   .catalog .entrance h3 { margin-top:7px; }
   .catalog .entrance > .card-art { right:4%; }
