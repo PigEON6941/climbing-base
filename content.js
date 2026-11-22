@@ -22,16 +22,9 @@ window.workbench = {
       },
       {
         name: "线路笔记 · 岩迹",
-        description: "记录攀岩线路、视频和动作笔记，回看每次尝试。",
+        description: "回看攀岩视频、比较动作，用线路笔记记录每次尝试。",
         url: "https://pigeon6941.github.io/crux-beta-notebook/",
         art: "notebook"
-      },
-      {
-        name: "攀岩 Beta 视频分析",
-        description: "想做一个能对着攀岩录像拆解动作、比较不同走法的工具。",
-        url: "",
-        status: "构思中",
-        art: "video"
       }
     ],
     games: []

@@ -205,6 +205,8 @@ footer { margin-top: auto; display: flex; justify-content: space-between; gap: 1
 .project-figure { position:relative; isolation:isolate; height:clamp(154px,17.3vw,235px); overflow:hidden; }
 .specimen-plate { background:#272a27; }
 .specimen-plate img { position:absolute; top:-9%; left:0; width:100%; height:118%; object-fit:contain; }
+.notebook-plate { background:radial-gradient(ellipse at 50% 50%,#3a4432 0%,#272a27 70%); }
+.notebook-plate img { position:absolute; inset:0; width:100%; height:100%; object-fit:contain; padding:9px; }
 .muted-figure svg { max-width:370px; width:76%; height:80%; color:#a3b09d; }
 .project-figure::after { content:""; pointer-events:none; position:absolute; right:14px;bottom:12px;width:12px;height:12px;border-right:1px solid #657162;border-bottom:1px solid #657162; }
 .project:has(.launch) { border-color:var(--edge); }
