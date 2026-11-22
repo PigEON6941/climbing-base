@@ -81,6 +81,7 @@
     const url = liveUrl(project.url);
     const illustration = project.art === "route"
       ? `<span class="plate-tag" aria-hidden="true">CRUX / JUG</span><img src="${prefix}assets/crux-jug.webp" width="820" height="546" alt="" decoding="async">`
+      : project.art === "notebook" ? `<span class="plate-tag" aria-hidden="true">BETA / NOTEBOOK</span>${art.notebook()}`
       : project.art === "video" ? `<span class="plate-tag" aria-hidden="true">BETA / MOTION</span>${art.video()}` : categories[page].image();
     const action = url ? `<a class="launch" href="${escape(url)}" aria-label="体验 ${escape(project.name)}">打开体验 ${external}</a>` :
       `<span class="project-status"><i></i>${escape(project.status || "尚未开放")}</span>`;

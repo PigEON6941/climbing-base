@@ -62,5 +62,17 @@
     return frame("0 0 350 160", `<g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M46 32h256v95H46zM46 42h256M46 116h256" stroke-dasharray="3 2"/><path d="M132 42v74m84-74v74"/><g stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m70 58 12 18 13 4 13-23m-12 26-8 13-13-2-9 12m21-11 15 5 6 12m50-59 5 16 16 7 15-28m-15 31-9 14-17 2-6 10m26-10 13 8 5 11m46-67 9 19 17 5 15-30m-15 34-7 16-16 1-6 13m23-12 14 9 5 10"/></g><g fill="#b8caaa"><circle cx="96" cy="67" r="5"/><circle cx="178" cy="62" r="5"/><circle cx="263" cy="58" r="5"/></g></g>`, "project-art");
   }
 
-  window.illustrations = {mechanism, gamepad, video};
+  function notebook() {
+    return frame("0 0 350 160", `
+      <g fill="none" stroke="#a3b09d" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M62 30h109v105H62zM171 30h117v105H171"/>
+        <path d="M72 139h224V39M178 30v105" opacity=".4"/>
+        <path d="M81 116c4-22 32-18 31-39s29-16 30-28" stroke="#bfd4b2" stroke-dasharray="3 5"/>
+        <g fill="#333e33" stroke="#bfd4b2"><path d="m75 113 10-5 9 5-8 8-10-1zM104 77l9-6 11 4-4 8-12 1zM133 48l8-6 11 5-4 7-12 1z"/></g>
+        <rect x="198" y="46" width="67" height="41" rx="2"/><path d="m224 57 14 10-14 10z" fill="#bfd4b2" stroke="none"/>
+        <path d="M198 102h67m-67 10h46" opacity=".7"/>
+      </g>`, "project-art notebook-art");
+  }
+
+  window.illustrations = {mechanism, gamepad, video, notebook};
 })();
