@@ -21,7 +21,7 @@ window.workbench = {
         art: "route"
       },
       {
-        name: "线路笔记 · 岩迹",
+        name: "Beta Notebook · 岩迹",
         description: "回看攀岩视频、比较动作，用线路笔记记录每次尝试。",
         url: "https://pigeon6941.github.io/crux-beta-notebook/",
         art: "notebook"
