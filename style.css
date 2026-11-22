@@ -211,7 +211,6 @@ footer { margin-top: auto; display: flex; justify-content: space-between; gap: 1
 .project-figure::after { content:""; pointer-events:none; position:absolute; right:14px;bottom:12px;width:12px;height:12px;border-right:1px solid #657162;border-bottom:1px solid #657162; }
 .project:has(.launch) { border-color:var(--edge); }
 .project-info { background:var(--panel); }
-.projects { grid-template-columns:minmax(0,1.24fr) minmax(0,1fr); }
 .entry-arrow { border-color:color-mix(in srgb,currentColor 45%,transparent); }
 .empty.games { background:#30382f; color:var(--ink); }
 .empty.games::before { background-image:radial-gradient(#acbca022 .9px,transparent 1px); }
