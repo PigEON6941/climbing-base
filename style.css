@@ -93,6 +93,15 @@ footer { margin-top: auto; display: flex; justify-content: space-between; gap: 1
 .signature,.location { display:inline-flex; align-items:center; gap: 9px; }
 .signature span { color: var(--edge); }
 .location svg { width: 13px; height: 16px; color: var(--accent); }
+.profile-links { display:flex; flex-wrap:wrap; gap:10px; }
+.profile-links a { display:inline-flex; align-items:center; justify-content:center; gap:12px; min-height:44px; padding:0 14px; border:1px solid var(--edge); border-radius:3px; color:var(--accent); font:500 12px/1.4 var(--mono); }
+.profile-links a svg { width:14px; height:14px; flex:none; }
+.profile-links a:hover { color:var(--ink); background:var(--forest); border-color:var(--accent); }
+.bio-lines .profile-links { margin-top:14px; }
+.footer-meta { display:flex; align-items:center; gap:24px; }
+.footer-meta .profile-links { gap:18px; }
+.footer-meta .profile-links a { border:0; padding:0; font-size:11px; color:var(--muted); gap:7px; }
+.footer-meta .profile-links a:hover { color:var(--accent); background:transparent; text-decoration:underline; text-underline-offset:4px; }
 .listing { padding-block: 26px 48px; }
 .back { display:inline-flex; gap: 8px; align-items:center; font-size: 14px; min-height: 44px; color: var(--accent); }
 .back:hover { text-decoration: underline; }
@@ -163,7 +172,9 @@ footer { margin-top: auto; display: flex; justify-content: space-between; gap: 1
   .entrance > .card-art { width:41%; right:3%; height:98%; top:1%; }
   .entry-arrow { left:auto; right:9px; bottom:9px; width:23px; height:21px; }
   .entry-arrow svg { width:16px; height:16px; }
-  footer { min-height:47px; font-size:10px; }
+  footer { min-height:47px; font-size:10px; flex-direction:column; align-items:stretch; gap:0; padding-block:12px 4px; }
+  .footer-meta { justify-content:space-between; gap:12px; }
+  .footer-meta .location { margin-left:auto; }
   .signature,.location { gap:5px; }
   .signature img { width:15px; height:15px; }
   .listing { padding:12px 0 28px; }

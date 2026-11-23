@@ -7,6 +7,10 @@ window.workbench = {
     intro: [
       "一个普通高中生的网站",
       "持续更新攀岩相关工具和游戏中"
+    ],
+    links: [
+      { label: "About.me", url: "https://about.me/PigEON6941" },
+      { label: "GitHub", url: "https://github.com/PigEON6941/" }
     ]
   },
   // 在对应数组里增加 { name, description, url }，页面就会自动多一张卡片。

@@ -26,8 +26,14 @@
       <span>${name}</span></a><nav aria-label="主导航">${nav}</nav>
     </div></header>`;
   }
+  function profileLinks() {
+    const links = (profile.links || []).filter(link => liveUrl(link.url));
+    if (!links.length) return "";
+    return `<div class="profile-links" role="group" aria-label="外部主页">${links.map(link =>
+      `<a href="${escape(liveUrl(link.url))}" lang="en">${escape(link.label)}${external}</a>`).join("")}</div>`;
+  }
   function footer() {
-    return `<footer class="wrap"><span class="signature"><img src="${prefix}assets/pigeon.svg" width="18" height="18" alt="">${name} <span>/</span> ${escape(siteTitle)}</span><span class="location">${pin} ${escape(profile.location)}</span></footer>`;
+    return `<footer class="wrap"><span class="signature"><img src="${prefix}assets/pigeon.svg" width="18" height="18" alt="">${name} <span>/</span> ${escape(siteTitle)}</span><div class="footer-meta">${profileLinks()}<span class="location">${pin} ${escape(profile.location)}</span></div></footer>`;
   }
   function entrance(key) {
     const item = categories[key];
@@ -52,7 +58,7 @@
         <section class="screen about wrap" id="about" aria-label="关于我" tabindex="-1">
           <div class="identity">
             <div class="headline about-target" aria-hidden="true">${headline}</div>
-            <div class="bio-lines">${profile.intro.map(line => `<p>${escape(line)}</p>`).join("")}</div>
+            <div class="bio-lines">${profile.intro.map(line => `<p>${escape(line)}</p>`).join("")}${profileLinks()}</div>
           </div>
           <figure class="bird-figure">
             <div class="bird-stage">
